@@ -76,5 +76,5 @@ task customFatJar(type: Jar) {
 }
  
 task stage {
-    dependsOn(customFatJar)
+    dependsOn(customFatJar) 
 }
