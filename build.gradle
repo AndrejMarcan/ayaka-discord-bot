@@ -60,15 +60,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-
-jar {
-  manifest {
-    attributes(
-      'Main-Class': 'com.yamiy.ayaka.Ayaka'
-    )
-  }
+task customFatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'com.yamiy.ayaka.Ayaka'
+    }
+    baseName = 'all-in-one-jar'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
-
+ 
 task stage {
-    dependsOn jar
+    dependsOn(customFatJar)
 }
