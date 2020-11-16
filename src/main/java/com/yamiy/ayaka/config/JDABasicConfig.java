@@ -9,9 +9,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class JDABasicConfig {
-	/** token here is invalid, you have to get your own drom https://discord.com/developers/applications */
-	//private static final String token = "Nzc0OTIxNjE0MjAxNTg1NzE0.X6ez_g.kbQKqiGj4YtgorHvVmgPX659I8A";
-	private static final String token = "Nzc0OTIxNjE0MjAxNTg1NzE0.X6ez_g.-ioFxLp72gBca1reS9A6ipWSXRM";
+	private static final String token = System.getenv("token");
 	
 	public static JDABuilder buildJDA() throws LoginException {
 		JDABuilder jda = JDABuilder.createDefault(
