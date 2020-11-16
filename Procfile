@@ -1,1 +1,1 @@
-run: java -jar target/ayaka-discord-bot-0.0.2.jar
+worker: java -jar build/libs/ayaka-discord-bot-0.0.2.jar
